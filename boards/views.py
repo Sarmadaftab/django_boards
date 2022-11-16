@@ -107,6 +107,7 @@ def topic_posts(request, pk, topic_pk):
 
 @login_required
 def reply_topic(request, pk, topic_pk):
+    # print("hello testing")
     topic = get_object_or_404(Topic, board__pk=pk, pk=topic_pk)
     if request.method == 'POST':
         form = PostForm(request.POST)
